@@ -16,8 +16,28 @@
  */
 class JFeedParserMock extends JFeedParser
 {
+	/**
+	 * @var    mixed  The value to return when the parse method is called.
+	 * @since  12.1
+	 */
+	public static $parseReturn = null;
+
 	protected function initialise()
 	{
 		// Do nothing.
+	}
+
+	public function parse()
+	{
+		if (is_null(self::$parseReturn))
+		{
+			return parent::parse();
+		}
+
+		$return = self::$parseReturn;
+
+		self::$parseReturn = null;
+
+		return $return;
 	}
 }
