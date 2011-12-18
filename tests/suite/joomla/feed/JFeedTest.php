@@ -52,6 +52,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::__construct
 	 */
 	public function testConstructor()
 	{
@@ -67,6 +69,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::__get
 	 */
 	public function testMagicGetSet()
 	{
@@ -85,6 +89,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::__get
 	 */
 	public function testMagicGetNull()
 	{
@@ -97,6 +103,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::__set
 	 */
 	public function testMagicSetUpdatedDateString()
 	{
@@ -113,6 +121,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::__set
 	 */
 	public function testMagicSetUpdatedDateJDateObject()
 	{
@@ -131,6 +141,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::__set
 	 */
 	public function testMagicSetAuthorWithPerson()
 	{
@@ -152,6 +164,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @since   12.1
 	 *
 	 * @expectedException  InvalidArgumentException
+	 *
+	 * @covers  JFeed::__set
 	 */
 	public function testMagicSetAuthorWithInvalidAuthor()
 	{
@@ -166,6 +180,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @since   12.1
 	 *
 	 * @expectedException  InvalidArgumentException
+	 *
+	 * @covers  JFeed::__set
 	 */
 	public function testMagicSetAuthorWithInvalidProperty()
 	{
@@ -178,6 +194,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::__set
 	 */
 	public function testMagicSetGeneral()
 	{
@@ -194,6 +212,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::addCategory
 	 */
 	public function testAddCategory()
 	{
@@ -210,6 +230,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::addContributor
 	 */
 	public function testAddContributor()
 	{
@@ -228,6 +250,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::addEntry
 	 */
 	public function testAddEntry()
 	{
@@ -246,6 +270,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::offsetExists
 	 */
 	public function testOffsetExists()
 	{
@@ -270,6 +296,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::offsetGet
 	 */
 	public function testOffsetGet()
 	{
@@ -294,6 +322,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::offsetSet
 	 */
 	public function testOffsetSet()
 	{
@@ -319,6 +349,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::offsetUnset
 	 */
 	public function testOffsetUnset()
 	{
@@ -344,6 +376,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::removeCategory
 	 */
 	public function testRemoveCategory()
 	{
@@ -366,6 +400,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::removeContributor
 	 */
 	public function testRemoveContributor()
 	{
@@ -393,6 +429,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::removeEntry
 	 */
 	public function testRemoveEntry()
 	{
@@ -417,6 +455,8 @@ class JFeedTest extends JoomlaTestCase
 	 * @return  void
 	 *
 	 * @since   12.1
+	 *
+	 * @covers  JFeed::setAuthor
 	 */
 	public function testSetAuthor()
 	{
