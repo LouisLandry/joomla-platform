@@ -258,6 +258,7 @@ class JDocument extends JObject
 	 * @return  object  The document object.
 	 *
 	 * @since   11.1
+	 * @throws  Exception
 	 */
 	public static function getInstance($type = 'html', $attributes = array())
 	{
@@ -288,7 +289,7 @@ class JDocument extends JObject
 				}
 				else
 				{
-					JError::raiseError(500, JText::_('JLIB_DOCUMENT_ERROR_UNABLE_LOAD_DOC_CLASS'));
+					throw new Exception(JText::_('JLIB_DOCUMENT_ERROR_UNABLE_LOAD_DOC_CLASS'), 500);
 				}
 			}
 
@@ -914,7 +915,7 @@ class JDocument extends JObject
 			}
 			else
 			{
-				JError::raiseError(500, JText::_('Unable to load renderer class'));
+				throw new Exception(JText::_('Unable to load renderer class'), 500);
 			}
 		}
 
