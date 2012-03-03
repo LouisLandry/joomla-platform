@@ -547,7 +547,7 @@ class JDatabaseDriverSqlsrv extends JDatabaseDriver
 
 				if ($this->debug)
 				{
-					throw new Exception(500, 'JDatabaseDriverSQLAzure::query: ' . $this->errorNum . ' - ' . $this->errorMsg);
+					throw new Exception('JDatabaseDriverSQLAzure::query: ' . $this->errorNum . ' - ' . $this->errorMsg);
 				}
 				return false;
 			}

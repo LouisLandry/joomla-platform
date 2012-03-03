@@ -393,7 +393,7 @@ abstract class JModel extends JObject
 			$r = null;
 			if (!preg_match('/Model(.*)/i', get_class($this), $r))
 			{
-				throw new Exception(500, JText::_('JLIB_APPLICATION_ERROR_MODEL_GET_NAME'), 500);
+				throw new Exception(JText::_('JLIB_APPLICATION_ERROR_MODEL_GET_NAME'), 500);
 			}
 			$this->name = strtolower($r[1]);
 		}
@@ -449,7 +449,7 @@ abstract class JModel extends JObject
 			return $table;
 		}
 
-		throw new Exception(0, JText::sprintf('JLIB_APPLICATION_ERROR_TABLE_NAME_NOT_SUPPORTED', $name), 0);
+		throw new Exception(JText::sprintf('JLIB_APPLICATION_ERROR_TABLE_NAME_NOT_SUPPORTED', $name), 0);
 
 		return null;
 	}

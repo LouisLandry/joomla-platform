@@ -57,7 +57,7 @@ abstract class JFolder
 		}
 		if (self::exists($dest) && !$force)
 		{
-			throw new Exception(-1, JText::_('JLIB_FILESYSTEM_ERROR_FOLDER_EXISTS'));
+			throw new Exception(JText::_('JLIB_FILESYSTEM_ERROR_FOLDER_EXISTS'), -1);
 		}
 
 		// Make sure the destination exists
