@@ -95,7 +95,7 @@ class JCacheStorageMemcached extends JCacheStorage
 
 		if ($memcachedtest == false)
 		{
-			throw new Exception(404, 'Could not connect to memcached server', 404);
+			throw new Exception('Could not connect to memcached server', 404);
 		}
 
 		self::$_db->setOption(Memcached::OPT_COMPRESSION, $this->_compress);
