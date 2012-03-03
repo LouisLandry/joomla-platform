@@ -97,7 +97,7 @@ abstract class JFactory
 		{
 			if (!$id)
 			{
-				throws new Exception('Application Instantiation Error', 500);
+				throw new Exception('Application Instantiation Error', 500);
 			}
 
 			self::$application = JApplication::getInstance($id, $config, $prefix);

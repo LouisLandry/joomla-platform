@@ -63,7 +63,7 @@ abstract class JFolder
 		// Make sure the destination exists
 		if (!self::create($dest))
 		{
-			throw new Exception(JText::_('JLIB_FILESYSTEM_ERROR_FOLDER_CREATE', -1)
+			throw new Exception(JText::_('JLIB_FILESYSTEM_ERROR_FOLDER_CREATE'), -1);
 		}
 
 		// If we're using ftp and don't have streams enabled

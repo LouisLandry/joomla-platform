@@ -226,6 +226,7 @@ abstract class JHtml
 		else
 		{
 			throw new Exception(JText::_('JLIB_HTML_ERROR_FUNCTION_NOT_SUPPORTED'), 500);
+		}
 	}
 
 	/**

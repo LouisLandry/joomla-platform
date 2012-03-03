@@ -136,8 +136,7 @@ class JRouter extends JObject
 			}
 			else
 			{
-				throws new Exception(JText::sprintf('JLIB_APPLICATION_ERROR_ROUTER_LOAD', $client), 500);
-				return $error;
+				throw new Exception(JText::sprintf('JLIB_APPLICATION_ERROR_ROUTER_LOAD', $client), 500);
 			}
 
 			self::$instances[$client] = & $instance;
