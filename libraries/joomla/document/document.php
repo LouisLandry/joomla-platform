@@ -900,6 +900,7 @@ class JDocument extends JObject
 	 * @return  JDocumentRenderer  Object or null if class does not exist
 	 *
 	 * @since   11.1
+	 * @throws  Exception
 	 */
 	public function loadRenderer($type)
 	{

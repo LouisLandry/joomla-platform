@@ -51,6 +51,7 @@ class JSessionStorageMemcache extends JSessionStorage
 	 * @param   array  $options  Optional parameters.
 	 *
 	 * @since   11.1
+	 * @throws  Exception
 	 */
 	public function __construct($options = array())
 	{

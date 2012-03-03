@@ -759,6 +759,7 @@ class JController extends JObject
 	 * @return  string  The name of the dispatcher
 	 *
 	 * @since   11.1
+	 * @throws  Exception
 	 */
 	public function getName()
 	{
