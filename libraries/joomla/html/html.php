@@ -122,7 +122,6 @@ abstract class JHtml
 			else
 			{
 				throw new Exception(JText::sprintf('JLIB_HTML_ERROR_NOTSUPPORTED_NOFILE', $prefix, $file), 500);
-				return false;
 			}
 		}
 
