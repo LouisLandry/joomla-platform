@@ -587,8 +587,6 @@ class JController extends JObject
 				if (!class_exists($viewClass))
 				{
 					throw new Exception(JText::sprintf('JLIB_APPLICATION_ERROR_VIEW_CLASS_NOT_FOUND', $viewClass, $path), 500);
-
-					return null;
 				}
 			}
 			else

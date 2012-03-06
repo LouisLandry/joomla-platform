@@ -450,8 +450,6 @@ abstract class JModel extends JObject
 		}
 
 		throw new Exception(JText::sprintf('JLIB_APPLICATION_ERROR_TABLE_NAME_NOT_SUPPORTED', $name), 0);
-
-		return null;
 	}
 
 	/**

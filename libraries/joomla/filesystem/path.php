@@ -170,7 +170,6 @@ class JPath
 		{
 			// Don't translate
 			throw new Exception('JPath::check Use of relative paths not permitted', 20);
-			jexit();
 		}
 
 		$path = self::clean($path);
@@ -178,7 +177,6 @@ class JPath
 		{
 			// Don't translate
 			throw new Exception('JPath::check Snooping out of bounds @ ' . $path, 20);
-			jexit();
 		}
 
 		return $path;
