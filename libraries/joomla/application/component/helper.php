@@ -398,9 +398,17 @@ class JComponentHelper
 
 		if ($error = $db->getErrorMsg() || empty(self::$components[$option]))
 		{
-			// Fatal error.
-			JError::raiseWarning(500, JText::sprintf('JLIB_APPLICATION_ERROR_COMPONENT_NOT_LOADING', $option, $error));
-			return false;
+			if (class_exists('JError'))
+			{
+				// Fatal error.
+				JError::raiseWarning(500, JText::sprintf('JLIB_APPLICATION_ERROR_COMPONENT_NOT_LOADING', $option, $error));
+			}
+			else
+			{
+				JLog::add(JText::sprintf('JLIB_APPLICATION_ERROR_COMPONENT_NOT_LOADING', $option, $error), JLog::WARNING, 'JError');
+			}
+
+		return false;
 		}
 
 		// Convert the params to an object.

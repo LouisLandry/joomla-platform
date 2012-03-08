@@ -117,7 +117,14 @@ class JControllerAdmin extends JController
 
 		if (!is_array($cid) || count($cid) < 1)
 		{
-			JError::raiseWarning(500, JText::_($this->text_prefix . '_NO_ITEM_SELECTED'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(500, JText::_($this->text_prefix . '_NO_ITEM_SELECTED'));
+			}
+			else
+			{
+				JLog::add(JText::_($this->text_prefix . '_NO_ITEM_SELECTED'), JLog::WARNING, 'JError');
+			}
 		}
 		else
 		{
@@ -177,8 +184,17 @@ class JControllerAdmin extends JController
 
 		if (empty($cid))
 		{
-			JError::raiseWarning(500, JText::_($this->text_prefix . '_NO_ITEM_SELECTED'));
-		}
+
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(500, JText::_($this->text_prefix . '_NO_ITEM_SELECTED'));
+				}
+				else
+				{
+					JLog::add(JText::_($this->text_prefix . '_NO_ITEM_SELECTED'), JLog::WARNING, 'JError');
+				}
+
+			}
 		else
 		{
 			// Get the model.
@@ -190,7 +206,14 @@ class JControllerAdmin extends JController
 			// Publish the items.
 			if (!$model->publish($cid, $value))
 			{
-				JError::raiseWarning(500, $model->getError());
+				if (class_exists('JError'))
+				{
+					JError::raiseWarning(500, $model->getError());
+				}
+				else
+				{
+					JLog::add(JText::_($model->getError()), JLog::WARNING, 'JError');
+				}
 			}
 			else
 			{
