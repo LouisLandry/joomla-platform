@@ -289,7 +289,14 @@ class JUpdate extends JObject
 		if (200 != $response->code)
 		{
 			// TODO: Add a 'mark bad' setting here somehow
-			JError::raiseWarning('101', JText::sprintf('JLIB_UPDATER_ERROR_EXTENSION_OPEN_URL', $url));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning('101', JText::sprintf('JLIB_UPDATER_ERROR_EXTENSION_OPEN_URL', $url));
+			}
+			else
+			{
+				JLog::add(JText::sprintf('JLIB_UPDATER_ERROR_EXTENSION_OPEN_URL', $url), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 

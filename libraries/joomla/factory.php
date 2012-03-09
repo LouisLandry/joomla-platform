@@ -369,7 +369,14 @@ abstract class JFactory
 		}
 		else
 		{
-			JError::raiseWarning('SOME_ERROR_CODE', JText::_('JLIB_UTIL_ERROR_LOADING_FEED_DATA'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning('SOME_ERROR_CODE', JText::_('JLIB_UTIL_ERROR_LOADING_FEED_DATA'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_UTIL_ERROR_LOADING_FEED_DATA'), JLog::WARNING, 'JError');
+			}
 		}
 
 		return false;
@@ -408,16 +415,36 @@ abstract class JFactory
 		if (empty($xml))
 		{
 			// There was an error
-			JError::raiseWarning(100, JText::_('JLIB_UTIL_ERROR_XML_LOAD'));
-
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(100, JText::_('JLIB_UTIL_ERROR_XML_LOAD'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_UTIL_ERROR_XML_LOAD'), JLog::WARNING, 'JError');
+			}
 			if ($isFile)
 			{
-				JError::raiseWarning(100, $data);
+				if (class_exists('JError'))
+				{
+					JError::raiseWarning(100, $data);
+				}
+				else
+				{
+					JLog::add($data, JLog::WARNING, 'JError');
+				}
 			}
 
 			foreach (libxml_get_errors() as $error)
 			{
-				JError::raiseWarning(100, 'XML: ' . $error->message);
+				if (class_exists('JError'))
+				{
+					JError::raiseWarning(100, 'XML: ' . $error->message);
+				}
+				else
+				{
+					JLog::add(JText::_('XML: ' . $error->message), JLog::WARNING, 'JError');
+				}
 			}
 		}
 

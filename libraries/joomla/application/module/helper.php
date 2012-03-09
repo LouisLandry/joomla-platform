@@ -334,7 +334,14 @@ abstract class JModuleHelper
 
 		if ($db->getErrorNum())
 		{
-			JError::raiseWarning(500, JText::sprintf('JLIB_APPLICATION_ERROR_MODULE_LOAD', $db->getErrorMsg()));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(500, JText::sprintf('JLIB_APPLICATION_ERROR_MODULE_LOAD', $db->getErrorMsg()));
+			}
+			else
+			{
+				JLog::add(JText::sprintf('JLIB_APPLICATION_ERROR_MODULE_LOAD', $db->getErrorMsg()), JLog::WARNING, 'JError');
+			}
 			return $clean;
 		}
 

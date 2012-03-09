@@ -149,7 +149,14 @@ class JArchive
 				break;
 
 			default:
-				JError::raiseWarning(10, JText::_('JLIB_FILESYSTEM_UNKNOWNARCHIVETYPE'));
+				if (class_exists('JError'))
+				{
+					JError::raiseWarning(10, JText::_('JLIB_FILESYSTEM_UNKNOWNARCHIVETYPE'));
+				}
+				else
+				{
+					JLog::add(JText::_(JText::_('JLIB_FILESYSTEM_UNKNOWNARCHIVETYPE')), JLog::WARNING, 'JError');
+				}
 				return false;
 				break;
 		}
