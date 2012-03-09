@@ -48,7 +48,14 @@ abstract class JInstallerHelper
 		$response = $http->get($url);
 		if (200 != $response->code)
 		{
-			JError::raiseWarning(42, JText::sprintf('JLIB_INSTALLER_ERROR_DOWNLOAD_SERVER_CONNECT', $response->code));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(42, JText::sprintf('JLIB_INSTALLER_ERROR_DOWNLOAD_SERVER_CONNECT', $response->code));
+			}
+			else
+			{
+				JLog::add(JText::sprintf('JLIB_INSTALLER_ERROR_DOWNLOAD_SERVER_CONNECT', $response->code), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 
@@ -171,7 +178,14 @@ abstract class JInstallerHelper
 
 		if (!count($files))
 		{
-			JError::raiseWarning(1, JText::_('JLIB_INSTALLER_ERROR_NOTFINDXMLSETUPFILE'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(1, JText::_('JLIB_INSTALLER_ERROR_NOTFINDXMLSETUPFILE'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_INSTALLER_ERROR_NOTFINDXMLSETUPFILE'), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 
@@ -195,8 +209,14 @@ abstract class JInstallerHelper
 			return $type;
 		}
 
-		JError::raiseWarning(1, JText::_('JLIB_INSTALLER_ERROR_NOTFINDJOOMLAXMLSETUPFILE'));
-
+		if (class_exists('JError'))
+		{
+			JError::raiseWarning(1, JText::_('JLIB_INSTALLER_ERROR_NOTFINDJOOMLAXMLSETUPFILE'));
+		}
+		else
+		{
+			JLog::add(JText::_('JLIB_INSTALLER_ERROR_NOTFINDJOOMLAXMLSETUPFILE'), JLog::WARNING, 'JError');
+		}
 		// Free up memory.
 		unset($xml);
 		return false;

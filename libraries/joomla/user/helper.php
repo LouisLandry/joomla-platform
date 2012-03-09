@@ -269,13 +269,27 @@ abstract class JUserHelper
 			// Time to take care of business.... store the user.
 			if (!$user->save())
 			{
-				JError::raiseWarning("SOME_ERROR_CODE", $user->getError());
+				if (class_exists('JError'))
+				{
+								JError::raiseWarning('SOME_ERROR_CODE', $user->getError());
+				}
+				else
+				{
+					JLog::add($user->getError(), JLog::WARNING, 'JError');
+				}
 				return false;
 			}
 		}
 		else
 		{
-			JError::raiseWarning("SOME_ERROR_CODE", JText::_('JLIB_USER_ERROR_UNABLE_TO_FIND_USER'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning('SOME_ERROR_CODE', JText::_('JLIB_USER_ERROR_UNABLE_TO_FIND_USER'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_USER_ERROR_UNABLE_TO_FIND_USER'), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 

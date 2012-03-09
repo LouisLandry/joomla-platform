@@ -238,7 +238,14 @@ abstract class JPluginHelper
 
 			if ($error = $db->getErrorMsg())
 			{
-				JError::raiseWarning(500, $error);
+				if (class_exists('JError'))
+				{
+					JError::raiseWarning(500, $error);
+				}
+				else
+				{
+					JLog::add(JText::_($error), JLog::WARNING, 'JError');
+				}
 				return false;
 			}
 

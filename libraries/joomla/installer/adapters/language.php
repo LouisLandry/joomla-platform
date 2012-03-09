@@ -176,24 +176,31 @@ class JInstallerLanguage extends JAdapterInstance
 				if (file_exists($this->parent->getPath('extension_site')))
 				{
 					// If the site exists say so.
-					JError::raiseWarning(
-						1,
-						JText::sprintf(
-							'JLIB_INSTALLER_ABORT',
-							JText::sprintf('JLIB_INSTALLER_ERROR_FOLDER_IN_USE', $this->parent->getPath('extension_site'))
-						)
-					);
+					if (class_exists('JError'))
+					{
+							JError::raiseWarning(1, JText::sprintf('JLIB_INSTALLER_ABORT',
+									JText::sprintf('JLIB_INSTALLER_ERROR_FOLDER_IN_USE', $this->parent->getPath('extension_site')))
+							);
+					}
+					else
+					{
+						JLog::add(JText::sprintf('JLIB_INSTALLER_ERROR_FOLDER_IN_USE', $this->parent->getPath('extension_site')), JLog::WARNING, 'JError');
+					}
 				}
 				else
 				{
 					// If the admin exists say so.
-					JError::raiseWarning(
-						1,
-						JText::sprintf(
-							'JLIB_INSTALLER_ABORT',
-							JText::sprintf('JLIB_INSTALLER_ERROR_FOLDER_IN_USE', $this->parent->getPath('extension_administrator'))
-						)
-					);
+					if (class_exists('JError'))
+					{
+						JError::raiseWarning(1,	JText::sprintf('JLIB_INSTALLER_ABORT',
+												JText::sprintf('JLIB_INSTALLER_ERROR_FOLDER_IN_USE', $this->parent->getPath('extension_administrator'))
+											)
+										);
+					}
+					else
+					{
+						JLog::add(JText::sprintf('JLIB_INSTALLER_ABORT', JText::sprintf('JLIB_INSTALLER_ERROR_FOLDER_IN_USE', $this->parent->getPath('extension_administrator'))), JLog::WARNING, 'JError');
+					}
 				}
 				return false;
 			}
@@ -441,7 +448,14 @@ class JInstallerLanguage extends JAdapterInstance
 		$element = $extension->get('element');
 		if (empty($element))
 		{
-			JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_ELEMENT_EMPTY'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_ELEMENT_EMPTY'));
+			}
+			else
+			{
+				JLog::add(JText::_(), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 
@@ -449,7 +463,14 @@ class JInstallerLanguage extends JAdapterInstance
 		$protected = $extension->get('protected');
 		if ($protected == 1)
 		{
-			JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_PROTECTED'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_PROTECTED'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_PROTECTED'), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 
@@ -457,7 +478,14 @@ class JInstallerLanguage extends JAdapterInstance
 		$params = JComponentHelper::getParams('com_languages');
 		if ($params->get($client->name) == $element)
 		{
-			JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_DEFAULT'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_DEFAULT'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_DEFAULT'), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 
@@ -477,14 +505,28 @@ class JInstallerLanguage extends JAdapterInstance
 		{
 			// If the folder doesn't exist lets just nuke the row as well and presume the user killed it for us
 			$extension->delete();
-			JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_PATH_EMPTY'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_PATH_EMPTY'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_PATH_EMPTY'), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 
 		if (!JFolder::delete($path))
 		{
 			// If deleting failed we'll leave the extension entry in tact just in case
-			JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_DIRECTORY'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_DIRECTORY'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_INSTALLER_ERROR_LANG_UNINSTALL_DIRECTORY'), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 
@@ -526,7 +568,14 @@ class JInstallerLanguage extends JAdapterInstance
 		}
 		if (!empty($count))
 		{
-			JError::raiseNotice(500, JText::plural('JLIB_INSTALLER_NOTICE_LANG_RESET_USERS', $count));
+			if (class_exists('JError'))
+			{
+				JError::raiseNotice(500, JText::plural('JLIB_INSTALLER_NOTICE_LANG_RESET_USERS', $count));
+			}
+			else
+			{
+				JLog::add(JText::plural('JLIB_INSTALLER_NOTICE_LANG_RESET_USERS', $count), JLog::NOTICE, 'JError');
+			}
 		}
 
 		// All done!
@@ -610,7 +659,14 @@ class JInstallerLanguage extends JAdapterInstance
 		}
 		catch (RuntimeException $e)
 		{
-			JError::raiseWarning(101, JText::_('JLIB_INSTALLER_ERROR_LANG_DISCOVER_STORE_DETAILS'));
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(101, JText::_('JLIB_INSTALLER_ERROR_LANG_DISCOVER_STORE_DETAILS'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_INSTALLER_ERROR_LANG_DISCOVER_STORE_DETAILS'), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 		return $this->parent->extension->get('extension_id');
@@ -639,8 +695,14 @@ class JInstallerLanguage extends JAdapterInstance
 		}
 		else
 		{
-			JError::raiseWarning(101, JText::_('JLIB_INSTALLER_ERROR_MOD_REFRESH_MANIFEST_CACHE'));
-
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(101, JText::_('JLIB_INSTALLER_ERROR_MOD_REFRESH_MANIFEST_CACHE'));
+			}
+			else
+			{
+				JLog::add(JText::_('JLIB_INSTALLER_ERROR_MOD_REFRESH_MANIFEST_CACHE'), JLog::WARNING, 'JError');
+			}
 			return false;
 		}
 	}
