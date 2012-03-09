@@ -568,7 +568,14 @@ class JInstallerLanguage extends JAdapterInstance
 		}
 		if (!empty($count))
 		{
-			JError::raiseNotice(500, JText::plural('JLIB_INSTALLER_NOTICE_LANG_RESET_USERS', $count));
+			if (class_exists('JError'))
+			{
+				JError::raiseNotice(500, JText::plural('JLIB_INSTALLER_NOTICE_LANG_RESET_USERS', $count));
+			}
+			else
+			{
+				JLog::add(JText::plural('JLIB_INSTALLER_NOTICE_LANG_RESET_USERS', $count), JLog::NOTICE, 'JError');
+			}
 		}
 
 		// All done!

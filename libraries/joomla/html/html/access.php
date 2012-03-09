@@ -122,7 +122,14 @@ abstract class JHtmlAccess
 		// Check for a database error.
 		if ($db->getErrorNum())
 		{
-			JError::raiseNotice(500, $db->getErrorMsg());
+			if (class_exists('JError'))
+			{
+				JError::raiseNotice(500, $db->getErrorMsg());
+			}
+			else
+			{
+				JLog::add($db->getErrorMsg(), JLog::NOTICE, 'JError');
+			}
 			return null;
 		}
 
@@ -172,7 +179,14 @@ abstract class JHtmlAccess
 		// Check for a database error.
 		if ($db->getErrorNum())
 		{
-			JError::raiseNotice(500, $db->getErrorMsg());
+			if (class_exists('JError'))
+			{
+				JError::raiseNotice(500, $db->getErrorMsg());
+			}
+			else
+			{
+				JLog::add(JText::_($db->getErrorMsg()), JLog::NOTICE, 'JError');
+			}
 			return null;
 		}
 
@@ -284,7 +298,14 @@ abstract class JHtmlAccess
 			// Check for a database error.
 			if ($db->getErrorNum())
 			{
-				JError::raiseNotice(500, $db->getErrorMsg());
+					if (class_exists('JError'))
+					{
+						JError::raiseNotice(500, $db->getErrorMsg());
+					}
+					else
+					{
+						JLog::add(JText::_(), JLog::NOTICE, 'JError');
+					}
 				return false;
 			}
 		}
