@@ -117,7 +117,7 @@ class JDispatcher extends JObject
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_EVENT_ERROR_DISPATCHER', $handler), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_EVENT_ERROR_DISPATCHER', $handler), JLog::WARNING, 'JError');
 			}
 		}
 	}

@@ -303,7 +303,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_NO_CONNECT', $host, $port)), JLog::WARNING, 'JError');
+					JLog::add(JText::_(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_NO_CONNECT', $host, $port)), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -322,7 +322,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_NO_CONNECT_SOCKET', $host, $port, $errno, $err), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_NO_CONNECT_SOCKET', $host, $port, $errno, $err), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -339,7 +339,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_BAD_RESPONSE', $this->_response), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_BAD_RESPONSE', $this->_response), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -382,7 +382,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add('JFTP::login: Unable to login', JLog::WARNING, 'JError');
+					JLog::add('JFTP::login: Unable to login', JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -398,7 +398,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::_(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_BAD_USERNAME', $this->_response, $user)), JLog::WARNING, 'JError');
+				JLog::add(JText::_(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_BAD_USERNAME', $this->_response, $user)), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -418,7 +418,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_BAD_PASSWORD', $this->_response, str_repeat('*', strlen($pass))), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_BAD_PASSWORD', $this->_response, str_repeat('*', strlen($pass))), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -469,7 +469,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_PWD_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_PWD_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -488,7 +488,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PWD_BAD_RESPONSE', $this->_response), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PWD_BAD_RESPONSE', $this->_response), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -520,7 +520,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_SYS_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_SYS_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -536,7 +536,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_SYST_BAD_RESPONSE', $this->_response), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_SYST_BAD_RESPONSE', $this->_response), JLog::WARNING, 'JError');
 			}
 			return false;
 			}
@@ -583,7 +583,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CHDIR_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CHDIR_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -599,7 +599,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_CHDIR_BAD_RESPONSE', $this->_response, $path), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_CHDIR_BAD_RESPONSE', $this->_response, $path), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -629,7 +629,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_REINIT_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_REINIT_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -645,7 +645,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::_(), JLog::WARNING, 'JError');
+				JLog::add(JText::_(), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -676,7 +676,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_RENAME_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_RENAME_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -692,7 +692,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_RENAME_BAD_RESPONSE_FROM', $this->_response, $from), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_RENAME_BAD_RESPONSE_FROM', $this->_response, $from), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -706,7 +706,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_RENAME_BAD_RESPONSE_TO', $this->_response, $to), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_RENAME_BAD_RESPONSE_TO', $this->_response, $to), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -751,7 +751,7 @@ class JClientFtp
 					}
 					else
 					{
-					    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CHMOD_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
+						JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CHMOD_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
 					}
 				}
 				return false;
@@ -770,7 +770,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_CHMOD_BAD_RESPONSE', $this->_response, $path, $mode), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_CHMOD_BAD_RESPONSE', $this->_response, $path, $mode), JLog::WARNING, 'JError');
 				}
 			}
 			return false;
@@ -802,7 +802,7 @@ class JClientFtp
 					}
 					else
 					{
-					    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_DELETE_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
+						JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_DELETE_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
 					}
 					return false;
 				}
@@ -821,7 +821,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_DELETE_BAD_RESPONSE', $this->_response, $path), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_DELETE_BAD_RESPONSE', $this->_response, $path), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -851,7 +851,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_MKDIR_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_MKDIR_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -867,7 +867,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_MKDIR_BAD_RESPONSE', $this->_response, $path), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_MKDIR_BAD_RESPONSE', $this->_response, $path), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -896,7 +896,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_RESTART_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_RESTART_BAD_RESPONSE_NATIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -912,7 +912,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_RESTART_BAD_RESPONSE', $this->_response, $point), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_RESTART_BAD_RESPONSE', $this->_response, $point), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -943,7 +943,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE_PASSIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE_PASSIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -957,7 +957,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE_BUFFER'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE_BUFFER'), JLog::WARNING, 'JError');
 				}
 				fclose($buffer);
 				return false;
@@ -975,7 +975,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE_PASSIVE'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE_PASSIVE'), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -989,7 +989,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE', $this->_response, $path), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE', $this->_response, $path), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1005,7 +1005,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE_TRANSFER', $this->_response, $path), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_CREATE_BAD_RESPONSE_TRANSFER', $this->_response, $path), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1040,7 +1040,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE_PASSIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE_PASSIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1055,7 +1055,7 @@ class JClientFtp
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE_BUFFER'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE_BUFFER'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1081,7 +1081,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE_PASSIVE'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE_PASSIVE'), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1095,7 +1095,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE', $this->_response, $remote), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE', $this->_response, $remote), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1124,7 +1124,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE_TRANSFER', $this->_response, $remote), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_READ_BAD_RESPONSE_TRANSFER', $this->_response, $remote), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1159,7 +1159,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_GET_PASSIVE'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_GET_PASSIVE'), JLog::WARNING, 'JError');
 			}
 			return false;
 			}
@@ -1172,7 +1172,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_GET_BAD_RESPONSE'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_GET_BAD_RESPONSE'), JLog::WARNING, 'JError');
 			}
 				return false;
 			}
@@ -1191,7 +1191,7 @@ class JClientFtp
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_GET_WRITING_LOCAL', $local), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_GET_WRITING_LOCAL', $local), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1205,7 +1205,7 @@ if (class_exists('JError'))
 }
 else
 {
-    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_GET_PASSIVE'), JLog::WARNING, 'JError');
+	JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_GET_PASSIVE'), JLog::WARNING, 'JError');
 }
 			return false;
 		}
@@ -1221,12 +1221,12 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_GET_BAD_RESPONSE_RETR', $this->_response, $remote), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_GET_BAD_RESPONSE_RETR', $this->_response, $remote), JLog::WARNING, 'JError');
 				}
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_GET_BAD_RESPONSE_RETR', $this->_response, $remote), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_GET_BAD_RESPONSE_RETR', $this->_response, $remote), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1250,7 +1250,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_GET_BAD_RESPONSE_TRANSFER', $this->_response, $remote), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_GET_BAD_RESPONSE_TRANSFER', $this->_response, $remote), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1292,7 +1292,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_STORE_PASSIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_STORE_PASSIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1305,7 +1305,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_STORE_BAD_RESPONSE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_STORE_BAD_RESPONSE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1326,7 +1326,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_STORE_READING_LOCAL', $local), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_STORE_READING_LOCAL', $local), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1339,7 +1339,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_STORE_FIND_LOCAL', $local), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_STORE_FIND_LOCAL', $local), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1354,7 +1354,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_STORE_PASSIVE'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_STORE_PASSIVE'), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1370,7 +1370,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_STORE_BAD_RESPONSE_STOR', $this->_response, $remote), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_STORE_BAD_RESPONSE_STOR', $this->_response, $remote), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1389,7 +1389,7 @@ else
 					}
 					else
 					{
-					    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_STORE_DATA_PORT'), JLog::WARNING, 'JError');
+						JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_STORE_DATA_PORT'), JLog::WARNING, 'JError');
 					}
 					return false;
 				}
@@ -1409,7 +1409,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_STORE_BAD_RESPONSE_TRANSFER', $this->_response, $remote), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_STORE_BAD_RESPONSE_TRANSFER', $this->_response, $remote), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1444,7 +1444,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_WRITE_PASSIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_WRITE_PASSIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1461,7 +1461,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_WRITE_BAD_RESPONSE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_WRITE_BAD_RESPONSE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1481,7 +1481,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_WRITE_PASSIVE'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_WRITE_PASSIVE'), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1495,7 +1495,7 @@ else
 		}
 		else
 		{
-		    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_WRITE_BAD_RESPONSE_STOR', $this->_response, $remote), JLog::WARNING, 'JError');
+			JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_WRITE_BAD_RESPONSE_STOR', $this->_response, $remote), JLog::WARNING, 'JError');
 		}
 			@ fclose($this->_dataconn);
 			return false;
@@ -1512,7 +1512,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_WRITE_DATA_PORT'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_WRITE_DATA_PORT'), JLog::WARNING, 'JError');
 			}
 				return false;
 			}
@@ -1532,7 +1532,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_WRITE_BAD_RESPONSE_TRANSFER', $this->_response, $remote), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_WRITE_BAD_RESPONSE_TRANSFER', $this->_response, $remote), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1569,7 +1569,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_PASSIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_PASSIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1587,7 +1587,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_BAD_RESPONSE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_BAD_RESPONSE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1619,7 +1619,7 @@ else
 		}
 		else
 		{
-		    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_PASSIVE'), JLog::WARNING, 'JError');
+			JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_PASSIVE'), JLog::WARNING, 'JError');
 		}
 			return false;
 		}
@@ -1639,7 +1639,7 @@ if (class_exists('JError'))
 }
 else
 {
-    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_BAD_RESPONSE_NLST', $this->_response, $path), JLog::WARNING, 'JError');
+	JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_BAD_RESPONSE_NLST', $this->_response, $path), JLog::WARNING, 'JError');
 }
 			return false;
 		}
@@ -1660,7 +1660,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_BAD_RESPONSE_TRANSFER', $this->_response, $path), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_LISTNAMES_BAD_RESPONSE_TRANSFER', $this->_response, $path), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1710,7 +1710,7 @@ if (class_exists('JError'))
 }
 else
 {
-    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_PASSIVE'), JLog::WARNING, 'JError');
+	JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_PASSIVE'), JLog::WARNING, 'JError');
 }
 				return false;
 			}
@@ -1723,7 +1723,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_BAD_RESPONSE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_BAD_RESPONSE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1741,7 +1741,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_PASSIVE'), JLog::WARNING, 'JError');
+					JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_PASSIVE'), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1761,7 +1761,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_BAD_RESPONSE_LIST', $this->_response, $path), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_BAD_RESPONSE_LIST', $this->_response, $path), JLog::WARNING, 'JError');
 				}
 				@ fclose($this->_dataconn);
 				return false;
@@ -1783,7 +1783,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_BAD_RESPONSE_TRANSFER', $this->_response, $path), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_BAD_RESPONSE_TRANSFER', $this->_response, $path), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -1841,7 +1841,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_UNRECOGNISED'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_LISTDETAILS_UNRECOGNISED'), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1949,7 +1949,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_PUTCMD_UNCONNECTED'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_PUTCMD_UNCONNECTED'), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -1963,7 +1963,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PUTCMD_SEND', $cmd), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PUTCMD_SEND', $cmd), JLog::WARNING, 'JError');
 			}
 		}
 
@@ -2002,7 +2002,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_VERIFYRESPONSE', $this->_response), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_VERIFYRESPONSE', $this->_response), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -2061,7 +2061,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_PASSIVE_CONNECT_PORT'), JLog::WARNING, 'JError');
+				JLog::add(JText::_('JLIB_CLIENT_ERROR_JFTP_PASSIVE_CONNECT_PORT'), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -2087,7 +2087,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PASSIVE_RESPONSE', $this->_response), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PASSIVE_RESPONSE', $this->_response), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -2105,7 +2105,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PASSIVE_IP_OBTAIN', $this->_responseMsg), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PASSIVE_IP_OBTAIN', $this->_responseMsg), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -2119,7 +2119,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PASSIVE_IP_VALID', $this->_responseMsg), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PASSIVE_IP_VALID', $this->_responseMsg), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -2137,7 +2137,7 @@ else
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PASSIVE_CONNECT', $this->_pasv['ip'], $this->_pasv['port'], $errno, $err), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_PASSIVE_CONNECT', $this->_pasv['ip'], $this->_pasv['port'], $errno, $err), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -2206,7 +2206,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_MODE_BINARY', $this->_response), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_MODE_BINARY', $this->_response), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -2221,7 +2221,7 @@ else
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_MODE_ASCII', $this->_response), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_CLIENT_ERROR_JFTP_MODE_ASCII', $this->_response), JLog::WARNING, 'JError');
 				}
 				return false;
 			}

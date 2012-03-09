@@ -415,7 +415,7 @@ class JCacheStorageFile extends JCacheStorage
 			}
 			else
 			{
-			    JLog::add('JCacheStorageFile::_deleteFolder ' . JText::_('JLIB_FILESYSTEM_ERROR_DELETE_BASE_DIRECTORY'), JLog::WARNING, 'JError');
+				JLog::add('JCacheStorageFile::_deleteFolder ' . JText::_('JLIB_FILESYSTEM_ERROR_DELETE_BASE_DIRECTORY'), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -433,7 +433,7 @@ class JCacheStorageFile extends JCacheStorage
 			}
 			else
 			{
-			    JLog::add('JCacheStorageFile::_deleteFolder' . JText::sprintf('JLIB_FILESYSTEM_ERROR_PATH_IS_NOT_A_FOLDER', $path), JLog::WARNING, 'JError');
+				JLog::add('JCacheStorageFile::_deleteFolder' . JText::sprintf('JLIB_FILESYSTEM_ERROR_PATH_IS_NOT_A_FOLDER', $path), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -470,7 +470,7 @@ class JCacheStorageFile extends JCacheStorage
 					}
 					else
 					{
-					    JLog::add('JCacheStorageFile::_deleteFolder' . JText::sprintf('JLIB_FILESYSTEM_DELETE_FAILED', $filename), JLog::WARNING, 'JError');
+						JLog::add('JCacheStorageFile::_deleteFolder' . JText::sprintf('JLIB_FILESYSTEM_DELETE_FAILED', $filename), JLog::WARNING, 'JError');
 					}
 					return false;
 				}
@@ -510,7 +510,7 @@ class JCacheStorageFile extends JCacheStorage
 			}
 			else
 			{
-			    JLog::add('JCacheStorageFile::_deleteFolder' . JText::sprintf('JLIB_FILESYSTEM_ERROR_FOLDER_DELETE', $path), JLog::WARNING, 'JError');
+				JLog::add('JCacheStorageFile::_deleteFolder' . JText::sprintf('JLIB_FILESYSTEM_ERROR_FOLDER_DELETE', $path), JLog::WARNING, 'JError');
 			}
 			$ret = false;
 		}
@@ -578,7 +578,7 @@ class JCacheStorageFile extends JCacheStorage
 			}
 			else
 			{
-			    JLog::add('JCacheStorageFile::_filesInFolder' . JText::sprintf('JLIB_FILESYSTEM_ERROR_PATH_IS_NOT_A_FOLDER'), JLog::WARNING, 'JError');
+				JLog::add('JCacheStorageFile::_filesInFolder' . JText::sprintf('JLIB_FILESYSTEM_ERROR_PATH_IS_NOT_A_FOLDER'), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -672,7 +672,7 @@ class JCacheStorageFile extends JCacheStorage
 			}
 			else
 			{
-			    JLog::add('JCacheStorageFile::_folders' . JText::sprintf('JLIB_FILESYSTEM_ERROR_PATH_IS_NOT_A_FOLDER', $path), JLog::WARNING, 'JError');
+				JLog::add('JCacheStorageFile::_folders' . JText::sprintf('JLIB_FILESYSTEM_ERROR_PATH_IS_NOT_A_FOLDER', $path), JLog::WARNING, 'JError');
 			}
 			return false;
 		}

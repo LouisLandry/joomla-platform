@@ -155,7 +155,7 @@ class JArchive
 				}
 				else
 				{
-				    JLog::add(JText::_(JText::_('JLIB_FILESYSTEM_UNKNOWNARCHIVETYPE')), JLog::WARNING, 'JError');
+					JLog::add(JText::_(JText::_('JLIB_FILESYSTEM_UNKNOWNARCHIVETYPE')), JLog::WARNING, 'JError');
 				}
 				return false;
 				break;

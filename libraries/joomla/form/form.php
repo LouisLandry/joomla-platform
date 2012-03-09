@@ -1116,7 +1116,14 @@ class JForm
 				switch ($valid->get('level'))
 				{
 					case E_ERROR:
-						JError::raiseWarning(0, $valid->getMessage());
+						if (class_exists('JError'))
+						{
+							JError::raiseWarning(0, $valid->getMessage());
+						}
+						else
+						{
+						   JLog::add($valid->getMessage(), JLog::WARNING, 'JError');
+						}
 						return false;
 						break;
 

@@ -110,7 +110,14 @@ class JExtension extends JObject
 					$tmp_client_id = JApplicationHelper::getClientInfo($this->client, 1);
 					if ($tmp_client_id == null)
 					{
-						JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_EXTENSION_INVALID_CLIENT_IDENTIFIER'));
+						if (class_exists('JError'))
+						{
+							JError::raiseWarning(100, JText::_('JLIB_INSTALLER_ERROR_EXTENSION_INVALID_CLIENT_IDENTIFIER'));
+						}
+						else
+						{
+							JLog::add(JText::_('JLIB_INSTALLER_ERROR_EXTENSION_INVALID_CLIENT_IDENTIFIER'), JLog::WARNING, 'JError');
+						}
 					}
 					else
 					{

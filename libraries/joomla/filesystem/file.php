@@ -107,7 +107,7 @@ class JFile
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_FILESYSTEM_ERROR_JFILE_STREAMS', $src, $dest, $stream->getError()), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_FILESYSTEM_ERROR_JFILE_STREAMS', $src, $dest, $stream->getError()), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -151,7 +151,7 @@ class JFile
 					}
 					else
 					{
-					    JLog::add(JText::_('JLIB_FILESYSTEM_ERROR_COPY_FAILED'), JLog::WARNING, 'JError');
+						JLog::add(JText::_('JLIB_FILESYSTEM_ERROR_COPY_FAILED'), JLog::WARNING, 'JError');
 					}
 					return false;
 				}
@@ -225,7 +225,7 @@ class JFile
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_FILESYSTEM_DELETE_FAILED', $filename), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_FILESYSTEM_DELETE_FAILED', $filename), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -273,7 +273,7 @@ class JFile
 				}
 				else
 				{
-				    JLog::add(JText::sprintf('JLIB_FILESYSTEM_ERROR_JFILE_MOVE_STREAMS', $stream->getError()), JLog::WARNING, 'JError');
+					JLog::add(JText::sprintf('JLIB_FILESYSTEM_ERROR_JFILE_MOVE_STREAMS', $stream->getError()), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -303,7 +303,7 @@ class JFile
 					}
 					else
 					{
-					    JLog::add(JText::_('JLIB_FILESYSTEM_ERROR_RENAME_FILE'), JLog::WARNING, 'JError');
+						JLog::add(JText::_('JLIB_FILESYSTEM_ERROR_RENAME_FILE'), JLog::WARNING, 'JError');
 					}
 					return false;
 				}
@@ -318,7 +318,7 @@ class JFile
 					}
 					else
 					{
-					    JLog::add(JText::_('JLIB_FILESYSTEM_ERROR_RENAME_FILE'), JLog::WARNING, 'JError');
+						JLog::add(JText::_('JLIB_FILESYSTEM_ERROR_RENAME_FILE'), JLog::WARNING, 'JError');
 					}
 					return false;
 				}
@@ -358,7 +358,7 @@ class JFile
 			}
 			else
 			{
-			    JLog::add(JText::sprintf('JLIB_FILESYSTEM_ERROR_READ_UNABLE_TO_OPEN_FILE', $filename), JLog::WARNING, 'JError');
+				JLog::add(JText::sprintf('JLIB_FILESYSTEM_ERROR_READ_UNABLE_TO_OPEN_FILE', $filename), JLog::WARNING, 'JError');
 			}
 			return false;
 		}
@@ -438,7 +438,7 @@ class JFile
 				}
 				else
 				{
-				    JLog::add(JText::_(), JLog::WARNING, 'JError');
+					JLog::add(JText::_(), JLog::WARNING, 'JError');
 				}
 				return false;
 			}
@@ -534,7 +534,7 @@ class JFile
 					}
 					else
 					{
-					    JLog::add(JText::_('JLIB_FILESYSTEM_ERROR_WARNFS_ERR02'), JLog::WARNING, 'JError');
+						JLog::add(JText::_('JLIB_FILESYSTEM_ERROR_WARNFS_ERR02'), JLog::WARNING, 'JError');
 					}
 				}
 			}
@@ -555,7 +555,7 @@ class JFile
 						}
 						else
 						{
-						    JLog::add(JText::_(), JLog::WARNING, 'JError');
+							JLog::add(JText::_(), JLog::WARNING, 'JError');
 						}
 					}
 				}
@@ -569,12 +569,12 @@ class JFile
 						}
 						else
 						{
-						    JLog::add(JText::_(), JLog::WARNING, 'JError');
+							JLog::add(JText::_(), JLog::WARNING, 'JError');
 						}
 					}
 					else
 					{
-					    JLog::add(JText::_(), JLog::WARNING, 'JError');
+						JLog::add(JText::_(), JLog::WARNING, 'JError');
 					}
 				}
 			}

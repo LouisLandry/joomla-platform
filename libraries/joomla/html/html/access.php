@@ -59,7 +59,14 @@ abstract class JHtmlAccess
 		// Check for a database error.
 		if ($db->getErrorNum())
 		{
-			JError::raiseWarning(500, $db->getErrorMsg());
+			if (class_exists('JError'))
+			{
+				JError::raiseWarning(500, $db->getErrorMsg());
+			}
+			else
+			{
+				JLog::add($db->getErrorMsg(), JLog::WARNING, 'JError');
+			}
 			return null;
 		}
 
