@@ -494,7 +494,14 @@ class JEditor extends JObject
 			if (!JFile::exists($path))
 			{
 				$message = JText::_('JLIB_HTML_EDITOR_CANNOT_LOAD');
-				JError::raiseWarning(500, $message);
+				if (class_exists('JError'))
+				{
+					JError::raiseWarning(500, $message);
+				}
+				else
+				{
+					JLog::add($message, JLog::WARNING, 'JError');
+				}
 				return false;
 			}
 		}

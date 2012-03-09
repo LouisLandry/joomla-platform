@@ -111,7 +111,14 @@ class JDispatcher extends JObject
 		}
 		else
 		{
-			return JError::raiseWarning('SOME_ERROR_CODE', JText::sprintf('JLIB_EVENT_ERROR_DISPATCHER', $handler));
+			if (class_exists('JError'))
+			{
+				return JError::raiseWarning('SOME_ERROR_CODE', JText::sprintf('JLIB_EVENT_ERROR_DISPATCHER', $handler));
+			}
+			else
+			{
+				JLog::add(JText::sprintf('JLIB_EVENT_ERROR_DISPATCHER', $handler), JLog::WARNING, 'JError');
+			}
 		}
 	}
 

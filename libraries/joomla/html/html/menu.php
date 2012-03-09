@@ -231,7 +231,14 @@ abstract class JHtmlMenu
 		// Check for a database error.
 		if ($db->getErrorNum())
 		{
-			JError::raiseNotice(500, $db->getErrorMsg());
+			if (class_exists('JError'))
+			{
+				JError::raiseNotice(500, $db->getErrorMsg());
+			}
+			else
+			{
+				JLog::add($db->getErrorMsg(), JLog::NOTICE, 'JError');
+			}
 		}
 
 		if (!$mitems)
