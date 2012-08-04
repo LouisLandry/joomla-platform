@@ -56,7 +56,12 @@ class JFeedFactory
 	public function getFeed($uri)
 	{
 		// Make sure the file exists.
-		if (!file_exists($uri))
+		
+		try
+		{
+			$this->http->get($uri);
+		}
+		catch (RunTimeException $e)
 		{
 			throw new InvalidArgumentException('The file ' . $uri . ' does not exist.');
 		}
@@ -65,7 +70,7 @@ class JFeedFactory
 		$reader = new XMLReader;
 
 		// Open the URI within the stream reader.
-		if (!$reader->open($uri, null, LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_NOWARNING))
+		if (!@$reader->open($uri, null, LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_NOWARNING))
 		{
 			// @codeCoverageIgnoreStart
 			throw new RuntimeException('Unable to open the feed.');
