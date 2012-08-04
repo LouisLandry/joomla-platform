@@ -56,7 +56,8 @@ class JFeedFactory
 	public function getFeed($uri)
 	{
 		// Make sure the file exists.
-		if (!file_exists($uri))
+		
+		if (!$this->http->get($uri))
 		{
 			throw new InvalidArgumentException('The file ' . $uri . ' does not exist.');
 		}
