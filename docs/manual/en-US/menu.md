@@ -1,5 +1,6 @@
 - Chapters
 - [Introductions](chapters/introduction.md)
+- [JCache](chapters/packages/cache.md)
 - [JCrypt](chapters/packages/crypt.md)
 - [JData](chapters/packages/data.md)
 - [JDatabase](chapters/packages/database.md)

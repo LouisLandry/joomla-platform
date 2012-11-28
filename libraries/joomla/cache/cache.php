@@ -10,33 +10,39 @@
 defined('JPATH_PLATFORM') or die;
 
 /**
- * Joomla! Caching Class
+ * A base caching class to enable the storage of persistent and non-persistent data.
  *
  * @package     Joomla.Platform
  * @subpackage  Cache
- * @since       12.3
+ * @since       13.1
  */
 abstract class JCache
 {
 	/**
-	 * @var    array  An array of key/value pairs to be used as a runtime cache.
-	 * @since  12.3
+	 * An array of key/value pairs to be used as a non-persistent, runtime cache.
+	 *
+	 * @var    array
+	 * @since  13.1
 	 */
 	static protected $runtime = array();
 
 	/**
-	 * @var    JRegistry  The options for the cache object.
-	 * @since  12.3
+	 * The options for the cache object.
+	 *
+	 * @var    JRegistry
+	 * @since  13.1
 	 */
 	protected $options;
 
 	/**
-	 * Constructor.
+	 * The class constructor.
 	 *
-	 * @param   JRegistry  $options  Caching options object.
+	 * @param   JRegistry  $options  The caching options. The standard options are as follows:
+	 *                               ttl - the number of seconds before the stored data expires (default = 900).
+	 *                               runtime - a boolean flag to enabled non-persistent caching (default = true).
 	 *
-	 * @since   12.3
-	 * @throws  RuntimeException
+	 * @since   13.1
+	 * @throws  RuntimeException if the cache handler is not supported.
 	 */
 	public function __construct(JRegistry $options = null)
 	{
@@ -48,13 +54,13 @@ abstract class JCache
 	}
 
 	/**
-	 * Get an option from the JCache instance.
+	 * Gets a caching option.
 	 *
 	 * @param   string  $key  The name of the option to get.
 	 *
-	 * @return  mixed  The option value.
+	 * @return  mixed  The value of the option.
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 */
 	public function getOption($key)
 	{
@@ -62,14 +68,14 @@ abstract class JCache
 	}
 
 	/**
-	 * Set an option for the JCache instance.
+	 * Sets a caching option.
 	 *
 	 * @param   string  $key    The name of the option to set.
 	 * @param   mixed   $value  The option value to set.
 	 *
-	 * @return  JCache  This object for method chaining.
+	 * @return  JCache  Returns itself to allow chaining.
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 */
 	public function setOption($key, $value)
 	{
@@ -79,15 +85,15 @@ abstract class JCache
 	}
 
 	/**
-	 * Get cached data by id.  If the cached data has expired then the cached data will be removed
-	 * and false will be returned.
+	 * Gets cached data by identifier under which it was stored. If the cached data has expired then the cached data will be
+	 * removed and false will be returned.
 	 *
-	 * @param   string   $cacheId       The cache data id.
-	 * @param   boolean  $checkRuntime  True to check runtime cache first.
+	 * @param   string   $cacheId       The identifier of the cached data.
+	 * @param   boolean  $checkRuntime  An optional flag to check runtime cache first (default = true).
 	 *
 	 * @return  mixed  Cached data string if it exists.
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 * @throws  RuntimeException
 	 */
 	public function get($cacheId, $checkRuntime = true)
@@ -108,14 +114,14 @@ abstract class JCache
 	}
 
 	/**
-	 * Store the cached data by id.
+	 * Stores the cached data under an identifier.
 	 *
-	 * @param   string  $cacheId  The cache data id
-	 * @param   mixed   $data     The data to store
+	 * @param   string  $cacheId  The identifier for the cache data.
+	 * @param   mixed   $data     The data to store.
 	 *
-	 * @return  JCache  This object for method chaining.
+	 * @return  JCache  Returns itself to allow chaining.
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 * @throws  RuntimeException
 	 */
 	public function store($cacheId, $data)
@@ -138,13 +144,13 @@ abstract class JCache
 	}
 
 	/**
-	 * Remove a cached data entry by id.
+	 * Removes a cached data entry by the identifier under which it was stored.
 	 *
-	 * @param   string  $cacheId  The cache data id.
+	 * @param   string  $cacheId  The identifier of the cache data.
 	 *
-	 * @return  JCache  This object for method chaining.
+	 * @return  JCache  Returns itself to allow chaining.
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 * @throws  RuntimeException
 	 */
 	public function remove($cacheId)
@@ -160,56 +166,56 @@ abstract class JCache
 	}
 
 	/**
-	 * Method to add a storage entry.
+	 * Adds a storage entry.
 	 *
-	 * @param   string   $key    The storage entry identifier.
+	 * @param   string   $key    The identifier of the storage entry.
 	 * @param   mixed    $value  The data to be stored.
 	 * @param   integer  $ttl    The number of seconds before the stored data expires.
 	 *
 	 * @return  void
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 * @throws  RuntimeException
 	 */
 	abstract protected function add($key, $value, $ttl);
 
 	/**
-	 * Method to determine whether a storage entry has been set for a key.
+	 * Determines whether a storage entry has been set for a key.
 	 *
 	 * @param   string  $key  The storage entry identifier.
 	 *
 	 * @return  boolean
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 */
 	abstract protected function exists($key);
 
 	/**
-	 * Method to get a storage entry value from a key.
+	 * Gets a storage entry value from a key.
 	 *
 	 * @param   string  $key  The storage entry identifier.
 	 *
 	 * @return  mixed
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 * @throws  RuntimeException
 	 */
 	abstract protected function fetch($key);
 
 	/**
-	 * Method to remove a storage entry for a key.
+	 * Removes a storage entry for a key.
 	 *
 	 * @param   string  $key  The storage entry identifier.
 	 *
 	 * @return  void
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 * @throws  RuntimeException
 	 */
 	abstract protected function delete($key);
 
 	/**
-	 * Method to set a value for a storage entry.
+	 * Sets a value for a storage entry.
 	 *
 	 * @param   string   $key    The storage entry identifier.
 	 * @param   mixed    $value  The data to be stored.
@@ -217,7 +223,7 @@ abstract class JCache
 	 *
 	 * @return  void
 	 *
-	 * @since   12.3
+	 * @since   13.1
 	 * @throws  RuntimeException
 	 */
 	abstract protected function set($key, $value, $ttl);
